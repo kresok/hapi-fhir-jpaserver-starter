@@ -397,7 +397,7 @@ hapi:
     # -------------------------------------------------------------------------------
     # comma-separated package names, will be @ComponentScan'ed by Spring to allow for creating custom Spring beans
 
-    custom-bean-packages: ca.uhn.fhir.ips
+    # custom-bean-packages: ca.uhn.fhir.ips
     # custom-interceptor-classes:
     # custom-provider-classes:
     
@@ -482,3 +482,4 @@ hapi:
         server_address: 'http://localhost:8080/fhir'
         refuse_to_fetch_third_party_urls: false
         fhir_version: R4
+    ips_enabled: true    
