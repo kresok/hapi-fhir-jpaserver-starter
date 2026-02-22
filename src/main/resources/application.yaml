@@ -92,8 +92,8 @@ spring:
     fail-on-missing-locations: false
 
   datasource:
-    # url: "jdbc:h2:file:./target/database/h2"
-    url: jdbc:h2:mem:test_mem
+    url: "jdbc:h2:file:./target/database/h2"
+    # url: jdbc:h2:mem:test_mem
     username: sa
     password: null
     driver-class-name: org.h2.Driver
@@ -183,11 +183,14 @@ hapi:
     #   - Observation
     # allowed_bundle_types: COLLECTION,DOCUMENT,MESSAGE,TRANSACTION,TRANSACTIONRESPONSE,BATCH,BATCHRESPONSE,HISTORY,SEARCHSET
 
+
+
+
     # -------------------------------------------------------------------------------
     # C. Clinical Reasoning / CQL / Care Gaps / CDS Hooks
     # -------------------------------------------------------------------------------
     cr:
-      enabled: false                            # exposes Clinical Reasoning operation endpoints
+      enabled: true                            # exposes Clinical Reasoning operation endpoints
       caregaps:
         reporter: "default"
         section_author: "default"
@@ -234,7 +237,7 @@ hapi:
         terminology_parameter_mode: FILTER_IN_MEMORY       # AUTO | USE_VALUE_SET_URL | USE_INLINE_CODES | FILTER_IN_MEMORY
         profile_mode: DECLARED                             # ENFORCED | DECLARED | OPTIONAL | TRUST | OFF
     cdshooks:
-      enabled: false
+      enabled: true
       clientIdHeaderName: client_id
 
     # -------------------------------------------------------------------------------
@@ -359,7 +362,7 @@ hapi:
     # -------------------------------------------------------------------------------
     # comma-separated package names, will be @ComponentScan'ed by Spring to allow for creating custom Spring beans
 
-    # custom-bean-packages:
+    custom-bean-packages: ca.uhn.fhir.ips
     # custom-interceptor-classes:
     # custom-provider-classes:
     
@@ -434,3 +437,6 @@ hapi:
     # R. LastN (analytics)
     # -------------------------------------------------------------------------------
     # lastn_enabled: true
+
+
+
