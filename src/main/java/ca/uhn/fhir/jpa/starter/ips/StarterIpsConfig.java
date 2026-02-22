@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class StarterIpsConfig {
 	@Bean
 	IIpsGenerationStrategy ipsGenerationStrategy() {
-		return new DefaultJpaIpsGenerationStrategy();
+		return new CustomJpaIpsGenerationStrategy();
 	}
 
 	@Bean
